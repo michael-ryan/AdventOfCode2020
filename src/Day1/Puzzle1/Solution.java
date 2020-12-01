@@ -6,13 +6,13 @@ public class Solution extends GenericSolution {
     public static void main(String[] args){
         int[] numbers = parseProblem();
 
-        Solution solution = new Solution();
+        GenericSolution solution = new Solution();
 
         solution.solve(numbers);
     }
 
     @Override
-    protected void solve(int[] numbers){
+    public void solve(int[] numbers){
         int a = 0;
         int b = 0;
 

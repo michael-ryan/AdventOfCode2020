@@ -44,5 +44,5 @@ public abstract class GenericSolution {
         return ret;
     }
 
-    protected abstract void solve(int[] numbers);
+    public abstract void solve(int[] numbers);
 }
