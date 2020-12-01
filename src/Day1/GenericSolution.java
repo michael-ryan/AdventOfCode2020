@@ -9,7 +9,7 @@ import java.util.List;
  * Generic abstract class that implements annoying boilerplate parsing and stuff.
  */
 public abstract class GenericSolution {
-    private static final File f = new File("src/Day1/Problem.txt");
+    private static final File f = new File("src/Day1/data.txt");
 
     /**
      * Loads the {@link File} <code>f</code> variable and returns it as an array of integers.
