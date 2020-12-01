@@ -13,9 +13,9 @@ public class Solution extends GenericSolution {
 
     @Override
     public void solve(int[] numbers){
-        int a = 0;
-        int b = 0;
-        int c = 0;
+        int a;
+        int b;
+        int c;
 
         int correctA = 0;
         int correctB = 0;
