@@ -10,11 +10,12 @@ public class FasterSolution extends GenericSolution {
 
         GenericSolution solution = new FasterSolution();
 
-        solution.solve(numbers);
+        Pair answer = solution.solve(numbers, 2020);
+        System.out.println(answer.getFirst() * answer.getSecond());
     }
 
     @Override
-    public void solve(int[] numbers){
+    public Pair solve(int[] numbers, int target){
         Arrays.sort(numbers);
 
         int smallPointer = 0;
@@ -23,6 +24,10 @@ public class FasterSolution extends GenericSolution {
         boolean done = false;
 
         while(!done){
+            if(smallPointer >= bigPointer){
+                return null;
+            }
+
             int total = numbers[smallPointer] + numbers[bigPointer];
             if(total > 2020){
                 bigPointer--;
@@ -30,8 +35,9 @@ public class FasterSolution extends GenericSolution {
                 smallPointer++;
             } else {
                 done = true;
-                System.out.println(numbers[smallPointer] * numbers[bigPointer]);
             }
         }
+
+        return new Pair(numbers[smallPointer], numbers[bigPointer]);
     }
 }

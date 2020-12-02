@@ -8,11 +8,11 @@ public class Solution extends GenericSolution {
 
         GenericSolution solution = new Solution();
 
-        solution.solve(numbers);
+        System.out.println(solution.solve(numbers));
     }
 
     @Override
-    public void solve(int[] numbers){
+    public long solve(int[] numbers){
         int a;
         int b;
         int c;
@@ -35,6 +35,6 @@ public class Solution extends GenericSolution {
                 }
             }
         }
-        System.out.println(correctA * correctB * correctC);
+        return correctA * correctB * correctC;
     }
 }

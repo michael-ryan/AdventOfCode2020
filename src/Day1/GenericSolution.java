@@ -10,6 +10,7 @@ import java.util.List;
  */
 public abstract class GenericSolution {
     private static final File f = new File("src/Day1/data.txt");
+    protected static final int TARGET = 2020;
 
     /**
      * Loads the {@link File} <code>f</code> variable and returns it as an array of integers.
@@ -57,8 +58,31 @@ public abstract class GenericSolution {
     }
 
     /**
-     * Solves the problem.
+     * Finds a pair of numbers in <code>numbers</code> that adds to make <code>target</code>.
      * @param numbers the input array of numbers to work with
+     * @param target the target number to find
+     * @return the pair of numbers that add to make the <code>target</code>, or null if no such pair is found.
      */
-    public abstract void solve(int[] numbers);
+    public abstract Pair solve(int[] numbers, int target);
+
+    /**
+     * Filth.
+     */
+    protected class Pair {
+        private int first;
+        private int second;
+
+        public Pair(int first, int second){
+            this.first = first;
+            this.second = second;
+        }
+
+        public int getFirst(){
+            return first;
+        }
+
+        public int getSecond(){
+            return second;
+        }
+    }
 }
