@@ -8,16 +8,15 @@ import java.util.stream.Stream;
  */
 public abstract class GenericSolution {
     private static final File f = new File("src/Day2/data.txt");
-    private Stream<String> inputLines;
 
     /**
      * Finds the number of valid entries in an array.
      * @return the number of valid entries
      */
     public long solve(){
-        this.parseProblem();
+        Stream<String> inputLines = this.loadFile();
 
-        return this.inputLines
+        return inputLines
                 .map(GenericSolution::parseInputLine)
                 .filter(this::validateEntry)
                 .count();
@@ -26,7 +25,7 @@ public abstract class GenericSolution {
     /**
      * Loads the {@link File} <code>f</code> variable and returns it as an array of integers.
      */
-    private void parseProblem(){
+    private Stream<String> loadFile(){
         BufferedReader reader;
         try{
             reader = new BufferedReader(new FileReader(f));
@@ -34,7 +33,7 @@ public abstract class GenericSolution {
             throw new RuntimeException(e);
         }
 
-        this.inputLines = reader.lines();
+        return reader.lines();
     }
 
     private static Entry parseInputLine(String s){
