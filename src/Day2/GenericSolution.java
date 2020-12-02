@@ -10,22 +10,23 @@ import java.util.List;
  */
 public abstract class GenericSolution {
     private static final File f = new File("src/Day2/data.txt");
+    private Entry[] entries;
 
     /**
      * Loads the {@link File} <code>f</code> variable and returns it as an array of integers.
      * @return the content of <code>f</code>
      */
-    protected static Entry[] parseProblem(){
+    protected void parseProblem(){
         BufferedReader reader;
         try{
             reader = new BufferedReader(new FileReader(f));
         } catch(FileNotFoundException e){
             System.out.println("File " + f.toString() + " not found.");
             System.exit(1);
-            return null;
+            return;
         }
 
-        List<Entry> entries = new ArrayList<>();
+        List<Entry> entryList = new ArrayList<>();
         String s;
         while (true){
             try {
@@ -33,16 +34,17 @@ public abstract class GenericSolution {
             } catch(IOException e) {
                 e.printStackTrace();
                 System.exit(2);
-                return null;
+                return;
             }
             String[] splitData = s.split(" ");
             int minimum = Integer.parseInt(splitData[0].split("-")[0]);
             int maximum = Integer.parseInt(splitData[0].split("-")[1]);
             char targetChar = splitData[1].charAt(0);
             String password = splitData[2];
-            entries.add(new Entry(minimum, maximum, targetChar, password));
+            entryList.add(new Entry(minimum, maximum, targetChar, password));
         }
-        return listToArray(entries);
+
+        entries = listToArray(entryList);
     }
 
     /**
@@ -63,10 +65,11 @@ public abstract class GenericSolution {
 
     /**
      * Finds the number of valid entries in an array.
-     * @param entries the entries to check if valid
      * @return the number of valid entries
      */
-    public int solve(Entry[] entries){
+    public int solve(){
+        this.parseProblem();
+
         int numberCorrect = 0;
         for(Entry entry : entries){
             if(this.validateEntry(entry)){

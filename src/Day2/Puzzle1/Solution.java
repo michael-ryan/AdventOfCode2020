@@ -4,11 +4,9 @@ import Day2.GenericSolution;
 
 public class Solution extends GenericSolution {
     public static void main(String[] args){
-        Entry[] entries = parseProblem();
-
         GenericSolution solution = new Solution();
 
-        System.out.println(solution.solve(entries));
+        System.out.println(solution.solve());
     }
 
     protected boolean validateEntry(Entry entry){
