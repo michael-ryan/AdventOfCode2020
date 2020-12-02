@@ -18,7 +18,7 @@ public abstract class GenericSolution {
         this.parseProblem();
 
         return this.inputLines
-                .map(GenericSolution::parseLine)
+                .map(GenericSolution::parseInputLine)
                 .filter(this::validateEntry)
                 .count();
     }
@@ -37,7 +37,7 @@ public abstract class GenericSolution {
         this.inputLines = reader.lines();
     }
 
-    private static Entry parseLine(String s){
+    private static Entry parseInputLine(String s){
         String[] splitData = s.split(" ");
         int minimum = Integer.parseInt(splitData[0].split("-")[0]);
         int maximum = Integer.parseInt(splitData[0].split("-")[1]);
