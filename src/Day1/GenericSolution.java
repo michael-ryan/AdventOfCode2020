@@ -63,26 +63,5 @@ public abstract class GenericSolution {
      * @param target the target number to find
      * @return the pair of numbers that add to make the <code>target</code>, or null if no such pair is found.
      */
-    public abstract Pair solve(int[] numbers, int target);
-
-    /**
-     * Filth.
-     */
-    protected class Pair {
-        private int first;
-        private int second;
-
-        public Pair(int first, int second){
-            this.first = first;
-            this.second = second;
-        }
-
-        public int getFirst(){
-            return first;
-        }
-
-        public int getSecond(){
-            return second;
-        }
-    }
+    public abstract long solve(int[] numbers, int target);
 }
