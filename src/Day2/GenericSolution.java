@@ -10,7 +10,7 @@ public abstract class GenericSolution {
     private static final File f = new File("src/Day2/data.txt");
 
     /**
-     * Finds the number of valid entries in an array.
+     * Finds the number of valid entries according to the implementation of {@link GenericSolution#validateEntry(Entry)}.
      * @return the number of valid entries
      */
     public long solve(){
@@ -49,7 +49,7 @@ public abstract class GenericSolution {
     /**
      * Validate the entry according to the puzzle's arbitrary rules.
      * @param entry the entry to validate
-     * @return <code>true</code> if the entry is valid, false otherwise
+     * @return <code>true</code> if the entry is valid, <code>false</code> otherwise
      */
     protected abstract boolean validateEntry(Entry entry);
 
