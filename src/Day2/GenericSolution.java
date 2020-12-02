@@ -23,7 +23,8 @@ public abstract class GenericSolution {
     }
 
     /**
-     * Loads the {@link File} <code>f</code> variable and returns it as an array of integers.
+     * Loads the lines of the {@link File} <code>f</code> and returns it as a stream of {@link String}s.
+     * @return the lines of <code>f</code>
      */
     private Stream<String> loadFile(){
         BufferedReader reader;
