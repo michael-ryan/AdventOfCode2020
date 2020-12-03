@@ -31,32 +31,33 @@ public abstract class GenericSolution {
     }
 
     public long solve(){
-        String[] map = this.loadFile().toArray(String[]::new);
-
         // grid[y][x], where (0, 0) is top left corner
-        char[][] grid = new char[map.length][];
-
-        for(int i = 0; i < map.length; i++){
-            grid[i] = map[i].toCharArray();
-        }
+        boolean[][] trees = this.loadFile()
+                // Mutate into grid of characters
+                .map(String::toCharArray)
+                // Make new grid of booleans where true marks a tree present
+                .map(chars -> {
+                    boolean[] treeRow = new boolean[chars.length];
+                    for(int i = 0; i < chars.length; i++){
+                        treeRow[i] = chars[i] == '#';
+                    }
+                    return treeRow;
+                })
+                .toArray(boolean[][]::new);
 
         int x = 0;
         int y = 0;
 
         long treesEncountered = 0;
 
-        while(y < grid.length){
-            if(treeAtPosition(grid, x, y)){
+        while(y < trees.length){
+            if(trees[y][x]){
                 treesEncountered++;
             }
-            x = (x + this.step.x) % grid[0].length;
+            x = (x + this.step.x) % trees[0].length;
             y += this.step.y;
         }
 
         return treesEncountered;
-    }
-
-    private static boolean treeAtPosition(char[][] grid, int x, int y){
-        return grid[y][x] == '#';
     }
 }

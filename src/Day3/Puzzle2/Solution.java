@@ -12,14 +12,14 @@ public class Solution extends GenericSolution {
         GenericSolution solution = new Solution();
 
         long answer = steps
+                // Run solver on each Point in stream
                 .mapToLong(point -> {
                     solution.setStep(point);
                     return solution.solve();
                 })
+                // Fold multiply
                 .reduce(1, (x, y) -> x * y);
 
         System.out.println(answer);
-
-
     }
 }
