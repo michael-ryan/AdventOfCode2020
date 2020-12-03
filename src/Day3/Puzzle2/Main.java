@@ -1,11 +1,11 @@
 package Day3.Puzzle2;
 
-import Day3.GenericSolution;
+import Day3.Solver;
 
 import java.awt.Point;
 import java.util.stream.Stream;
 
-public class Solution extends GenericSolution {
+public class Main {
     public static void main(String[] args){
         Stream<Point> steps = Stream.of(
                 new Point(1, 1),
@@ -15,13 +15,13 @@ public class Solution extends GenericSolution {
                 new Point(1, 2)
         );
 
-        GenericSolution solution = new Solution();
+        Solver solver = new Solver();
 
         long answer = steps
                 // Run solver on each Point in stream
                 .mapToLong(point -> {
-                    solution.setStep(point);
-                    return solution.solve();
+                    solver.setStep(point);
+                    return solver.solve();
                 })
                 // Fold multiply
                 .reduce(1, (x, y) -> x * y);

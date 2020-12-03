@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.stream.Stream;
 
-public abstract class GenericSolution {
+public class Solver {
     private static final File f = new File("src/Day3/data.txt");
     private Point step;
 
