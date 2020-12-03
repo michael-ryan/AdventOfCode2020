@@ -1,5 +1,7 @@
 package Day2;
 
+import Common.FileLoader;
+
 import java.io.*;
 import java.util.stream.Stream;
 
@@ -15,27 +17,12 @@ public abstract class GenericSolution {
      * @return the number of valid entries
      */
     public long solve(){
-        Stream<String> inputLines = this.loadFile();
+        Stream<String> inputLines = FileLoader.loadFile(f);
 
         return inputLines
                 .map(GenericSolution::parseInputLine)
                 .filter(this::validateEntry)
                 .count();
-    }
-
-    /**
-     * Loads the lines of the {@link File} <code>f</code> and returns it as a stream of {@link String}s.
-     * @return the lines of <code>f</code>
-     */
-    private Stream<String> loadFile(){
-        BufferedReader reader;
-        try{
-            reader = new BufferedReader(new FileReader(f));
-        } catch(FileNotFoundException e){
-            throw new RuntimeException(e);
-        }
-
-        return reader.lines();
     }
 
     private static Entry parseInputLine(String s){
