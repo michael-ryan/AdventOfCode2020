@@ -10,7 +10,8 @@ public abstract class GenericSolution {
     private static final File f = new File("src/Day2/data.txt");
 
     /**
-     * Finds the number of valid entries according to the implementation of {@link GenericSolution#validateEntry(Entry)}.
+     * Finds the number of valid entries according to the implementation of
+     * {@link GenericSolution#validateEntry(Entry)}.
      * @return the number of valid entries
      */
     public long solve(){
