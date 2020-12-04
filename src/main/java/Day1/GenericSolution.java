@@ -8,7 +8,7 @@ import java.io.*;
  * Generic abstract class that implements annoying boilerplate parsing and stuff.
  */
 public abstract class GenericSolution {
-    private static final File f = new File("src/Day1/data.txt");
+    private static final File f = new File("src/main/java/Day1/data.txt");
     protected static final int TARGET = 2020;
 
     /**

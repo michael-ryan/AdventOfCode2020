@@ -6,7 +6,7 @@ import java.awt.*;
 import java.io.File;
 
 public class Solver {
-    private static final File f = new File("src/Day3/data.txt");
+    private static final File f = new File("src/main/java/Day3/data.txt");
     private Point step;
 
     public void setStep(Point step){
