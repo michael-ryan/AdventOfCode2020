@@ -42,10 +42,10 @@ public abstract class GenericSolution {
     protected abstract boolean validateEntry(Entry entry);
 
     protected static class Entry {
-        private int first;
-        private int second;
-        private char requiredLetter;
-        private String password;
+        private final int first;
+        private final int second;
+        private final char requiredLetter;
+        private final String password;
 
         public Entry(int first, int second, char requiredLetter, String password){
             this.first = first;
