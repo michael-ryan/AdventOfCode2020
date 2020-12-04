@@ -12,7 +12,7 @@ public class Solution extends GenericSolution {
             { Passport.Field.BIRTH_YEAR, "19[2-9][0-9]|200[0-2]" },
             { Passport.Field.ISSUE_YEAR, "20(1[0-9]|20)" },
             { Passport.Field.EXPIRATION_YEAR, "20(2[0-9]|30)" },
-            { Passport.Field.HEIGHT, "1([5678][0-9]|9[0-3])cm|(59|6[0-9]|7[0-6])in" },
+            { Passport.Field.HEIGHT, "1([5-8][0-9]|9[0-3])cm|(59|6[0-9]|7[0-6])in" },
             { Passport.Field.HAIR_COLOUR, "#[0-9a-f]{6}" },
             { Passport.Field.EYE_COLOUR, "b(lu|rn)|gr(n|y)|amb|hzl|oth" },
             { Passport.Field.PASSPORT_ID, "[0-9]{9}" },
