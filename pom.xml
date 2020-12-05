@@ -16,6 +16,7 @@
                     <source>8</source>
                     <target>8</target>
                 </configuration>
+                <version>3.8.1</version>
             </plugin>
         </plugins>
     </build>
@@ -23,7 +24,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
+            <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
