@@ -1,12 +1,13 @@
 package Day2.Puzzle1;
 
+import Common.FileLoader;
 import Day2.GenericSolution;
 
 public class Solution extends GenericSolution {
     public static void main(String[] args){
         GenericSolution solution = new Solution();
 
-        System.out.println(solution.solve());
+        System.out.println(solution.solve(FileLoader.loadFile(f)));
     }
 
     protected boolean validateEntry(Entry entry){

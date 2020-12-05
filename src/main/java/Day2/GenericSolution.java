@@ -1,7 +1,5 @@
 package Day2;
 
-import Common.FileLoader;
-
 import java.io.*;
 import java.util.stream.Stream;
 
@@ -9,16 +7,15 @@ import java.util.stream.Stream;
  * Generic abstract class that implements annoying boilerplate parsing and stuff.
  */
 public abstract class GenericSolution {
-    private static final File f = new File("src/main/java/Day2/data.txt");
+    protected static final File f = new File("src/main/java/Day2/data.txt");
 
     /**
      * Finds the number of valid entries according to the implementation of
      * {@link GenericSolution#validateEntry(Entry)}.
+     * @param inputLines the raw input to analyse
      * @return the number of valid entries
      */
-    public long solve(){
-        Stream<String> inputLines = FileLoader.loadFile(f);
-
+    public long solve(Stream<String> inputLines){
         return inputLines
                 .map(GenericSolution::parseInputLine)
                 .filter(this::validateEntry)
