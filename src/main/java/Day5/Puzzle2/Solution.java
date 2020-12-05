@@ -4,6 +4,12 @@ import Day5.GenericSolution;
 
 import java.util.Arrays;
 
+// Finds the missing element in a list of otherwise contiguous integers from a to b by sorting, then using
+// a binary search and comparing the current item's value to (its index + lowest number in list)
+
+// Not as quick as just summing all numbers from a to b then subtracting the list's sum, but this was more
+// fun to code.
+
 public class Solution extends GenericSolution {
 
     public static void main(String[] args){
