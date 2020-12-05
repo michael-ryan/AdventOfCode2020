@@ -1,8 +1,6 @@
 package Day5;
 
 import Common.FileLoader;
-import Day4.Passport;
-import Day5.Puzzle1.Solution;
 
 import java.io.File;
 import java.util.*;
@@ -27,13 +25,13 @@ public abstract class GenericSolution {
         String row = s.substring(0, 7);
         String col = s.substring(7, 10);
 
-        int rowNumber = binarySearch(row, 0, 127);
-        int columnNumber = binarySearch(col, 0, 7);
+        int rowNumber = binaryPartition(row, 0, 127);
+        int columnNumber = binaryPartition(col, 0, 7);
 
         return (rowNumber * 8) + columnNumber;
     }
 
-    private static int binarySearch(String s, int low, int high){
+    private static int binaryPartition(String s, int low, int high){
         if(low == high || s.isEmpty()){
             return low;
         } else {
@@ -44,11 +42,11 @@ public abstract class GenericSolution {
                 high = (int)Math.floor(getMidpoint(low, high));
             }
 
-            return binarySearch(s.substring(1), low, high);
+            return binaryPartition(s.substring(1), low, high);
         }
     }
 
-    private static float getMidpoint(int a, int b){
+    protected static float getMidpoint(int a, int b){
         return (a + b) / 2f;
     }
 
