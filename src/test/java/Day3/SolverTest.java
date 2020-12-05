@@ -13,7 +13,7 @@ import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class GenericTest {
+public class SolverTest {
     protected Solver solver;
 
     @BeforeEach
