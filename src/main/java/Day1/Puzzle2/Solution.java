@@ -31,6 +31,7 @@ public class Solution extends GenericSolution {
             boolean done = false;
 
             while(!done){
+                // Don't reuse numbers[i]
                 if(smallPointer == i){
                     smallPointer++;
                     continue;

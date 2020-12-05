@@ -17,10 +17,10 @@ public class Solution extends GenericSolution {
     public boolean passportIsValid(Passport passport){
         boolean valid;
 
-        if(passport.getFieldsPresent().size() == 8){
+        if(passport.getFieldData().size() == 8){
             valid = true;
-        } else if(passport.getFieldsPresent().size() == 7){
-            valid = !passport.getFieldsPresent().contains(Passport.Field.COUNTRY_ID);
+        } else if(passport.getFieldData().size() == 7){
+            valid = !passport.getFieldData().containsKey(Passport.Field.COUNTRY_ID);
         } else {
             valid = false;
         }

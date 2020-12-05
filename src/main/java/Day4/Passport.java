@@ -28,8 +28,6 @@ public class Passport {
             { "cid", Field.COUNTRY_ID },
     }).collect(Collectors.toMap(data -> (String) data[0], data -> (Field)data[1]));
 
-
-    private final Set<Field> fieldsPresent = new HashSet<>();
     private final Map<Field, String> fieldData = new HashMap<>();
 
     public void addLine(String line){
@@ -40,13 +38,8 @@ public class Passport {
         for(String entry : line.split(" ")){
             Field key = ENTRIES.get(entry.split(":")[0]);
             String value = entry.split(":")[1];
-            fieldsPresent.add(key);
             fieldData.put(key, value);
         }
-    }
-
-    public Set<Field> getFieldsPresent(){
-        return fieldsPresent;
     }
 
     public Map<Field, String> getFieldData(){
