@@ -1,8 +1,8 @@
 package Day3.Puzzle2;
-
 import Day3.Solver;
 
 import java.awt.Point;
+import java.io.File;
 import java.util.stream.Stream;
 
 public class Main {
@@ -15,7 +15,7 @@ public class Main {
                 new Point(1, 2)
         );
 
-        Solver solver = new Solver();
+        Solver solver = new Solver(new File("src/main/java/Day3/data.txt"));
 
         long answer = steps
                 // Run solver on each Point in stream
